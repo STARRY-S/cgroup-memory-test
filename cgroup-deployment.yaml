@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cgroup-test-deployment
+  labels:
+    app: cgroup-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cgroup-test
+  template:
+    metadata:
+      labels:
+        app: cgroup-test
+    spec:
+      containers:
+      - name: cgroup-test1
+        image: hxstarrys/cgroup:latest
+        resources:
+          requests:
+            memory: "500Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
