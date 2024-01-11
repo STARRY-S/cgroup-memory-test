@@ -21,4 +21,4 @@ kubectl delete -f cgroup-deployment.yaml
 
 ## LICENSE
 
-MIT
+[MIT](LICENSE)
